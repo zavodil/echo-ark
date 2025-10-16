@@ -1,11 +1,5 @@
-use serde::Serialize;
 use std::env;
 use std::io::{self, Read, Write};
-
-#[derive(Serialize)]
-struct Output {
-    echo: String,
-}
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Read plain text input from stdin
@@ -23,12 +17,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         sender_id, message, block_height
     );
 
-    // Create output
-    let output = Output { echo: echo_message };
-
-    // Serialize to JSON and print to stdout
-    let json = serde_json::to_string(&output)?;
-    print!("{}", json);
+    print!("{}", echo_message);
     io::stdout().flush()?;
 
     Ok(())
