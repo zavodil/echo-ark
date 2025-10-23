@@ -43,7 +43,7 @@ cargo test
 echo '{"message":"Hello, NEAR!"}' | cargo run
 ```
 
-## Using with NEAR Offshore
+## Using with NEAR OutLayer
 
 Deploy and call via the dashboard:
 1. Push this code to GitHub
